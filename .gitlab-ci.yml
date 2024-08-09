@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+  - release
+  - deploy
+
+build:
+  stage: build
+  script:
+    - ./scripts/build.sh
+
+test:
+  stage: test
+  script:
+    - ./scripts/run-tests.sh
+
+release:
+  stage: release
+  script:
+    - ./scripts/release.sh
+
+deploy:
+  stage: deploy
+  script:
+    - ./scripts/deploy.sh
